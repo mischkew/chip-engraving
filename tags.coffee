@@ -69,7 +69,7 @@ module.exports.shaven = (serialNumber, tagShape) ->
           style:
             stroke: 'rgb(255,0,0)'
             'stroke-width': 0.1
-            fill: 'none'
+            # fill: 'none' # uncomment this to make shapes transparent
           d: 'M' + -tag.cutRadius + ',0 ' +
 
             'C' +
@@ -85,22 +85,22 @@ module.exports.shaven = (serialNumber, tagShape) ->
             'z'
         }
       ]
-      # [
-      #   'circle'
-      #   {
-      #     style:
-      #       fill: 'gray'
-      #     r: tag.innerRadius
-      #   }
-      # ]
-      # [
-      #   'circle.centerMarker'
-      #   {
-      #     style:
-      #       fill: 'yellow'
-      #     r: 0.5
-      #   }
-      # ]
+      [
+        'circle'
+        {
+          style:
+            fill: 'gray'
+          r: tag.innerRadius
+        }
+      ]
+      [
+        'circle.centerMarker'
+        {
+          style:
+            fill: 'yellow'
+          r: 0.5
+        }
+      ]
       [
         'text'
         options.serialNumber
